@@ -15,16 +15,16 @@
  margin: 0;
  line-height: 50px;
  text-align: center;
- /* Starting position */
+
  -moz-transform:translateX(50%);
  -webkit-transform:translateX(50%);	
  transform:translateX(50%);
- /* Apply animation to this element */	
+
  -moz-animation: horizontally 5s linear infinite alternate;
  -webkit-animation: horizontally 5s linear infinite alternate;
  animation: horizontally 5s linear infinite alternate;
 }
-/* Move it (define the animation) */
+
 @-moz-keyframes horizontally {
  0%   { -moz-transform: translateX(50%); }
  100% { -moz-transform: translateX(-50%); }
@@ -35,13 +35,13 @@
 }
 @keyframes horizontally {
  0%   { 
- -moz-transform: translateX(50%); /* Browser bug fix */
- -webkit-transform: translateX(50%); /* Browser bug fix */
+ -moz-transform: translateX(50%);
+ -webkit-transform: translateX(50%);
  transform: translateX(50%); 		
  }
  100% { 
- -moz-transform: translateX(-50%); /* Browser bug fix */
- -webkit-transform: translateX(-50%); /* Browser bug fix */
+ -moz-transform: translateX(-50%);
+ -webkit-transform: translateX(-50%);
  transform: translateX(-50%); 
  }
 }
