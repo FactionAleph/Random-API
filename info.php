@@ -1,14 +1,14 @@
 <?php
-echo "<h4 style=\"text-align: center;\"><a href=\"http://coolapi.uphero.com\">Home</a></h4>\n"; 
+echo "<h4 style=\"text-align: center;\"><a href=\"http://factionaleph.uphero.com\">Home</a></h4>\n"; 
 echo "<h1 style=\"text-align: center;\"><strong>API documentation</strong></h1>\n"; 
 echo "<h2 style=\"text-align: center;\">Random (Fake) Personal Information Generator</h2>\n"; 
 echo "<p style=\"text-align: center;\">API endpoint</p>\n"; 
-echo "<p style=\"text-align: center;\"><a href=\"http://coolapi.uphero.com/info.json\">coolapi.uphero.com/info.json</a></p>\n"; 
+echo "<p style=\"text-align: center;\"><a href=\"http://factionaleph.uphero.com/info.json\">factionaleph.uphero.com/info.json</a></p>\n"; 
 echo "<p style=\"text-align: center;\">&nbsp;</p>\n"; 
 echo "<p style=\"text-align: center;\">Example request (python):</p>\n"; 
-echo "<p style=\"text-align: center;\"><img src=\"http://coolapi.uphero.com/response2.png\" alt=\"\" width=\"411\" height=\"114\" />&nbsp;</p>\n"; 
+echo "<p style=\"text-align: center;\"><img src=\"http://factionaleph.uphero.com/response2.png\" alt=\"\" width=\"411\" height=\"114\" />&nbsp;</p>\n"; 
 echo "<p style=\"text-align: center;\">Example response:</p>\n"; 
-echo "<p style=\"text-align: center;\">&nbsp;<img src=\"http://coolapi.uphero.com/request2.png\" alt=\"\" width=\"527\" height=\"267\" /></p>\n"; 
+echo "<p style=\"text-align: center;\">&nbsp;<img src=\"http://factionaleph.uphero.com/request2.png\" alt=\"\" width=\"527\" height=\"267\" /></p>\n"; 
 echo "<p style=\"text-align: center;\">Attributes:</p>\n"; 
 echo "<p style=\"text-align: center;\">'id' -- Row number</p>\n"; 
 echo "<p style=\"text-align: center;\">'title'</p>\n"; 
