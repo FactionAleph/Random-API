@@ -15,16 +15,13 @@
  margin: 0;
  line-height: 50px;
  text-align: center;
-
  -moz-transform:translateX(50%);
  -webkit-transform:translateX(50%);	
  transform:translateX(50%);
-
  -moz-animation: horizontally 5s linear infinite alternate;
  -webkit-animation: horizontally 5s linear infinite alternate;
  animation: horizontally 5s linear infinite alternate;
 }
-
 @-moz-keyframes horizontally {
  0%   { -moz-transform: translateX(50%); }
  100% { -moz-transform: translateX(-50%); }
@@ -35,7 +32,7 @@
 }
 @keyframes horizontally {
  0%   { 
- -moz-transform: translateX(50%);
+ -moz-transform: translateX(50%); 
  -webkit-transform: translateX(50%);
  transform: translateX(50%); 		
  }
@@ -54,9 +51,9 @@
 
 </div>
 
-<style scoped>
-.example1 a:hover {text-decoration:none;color:orange;font-weight:bold;}
-</style>
-<div class="git">
-<p><a href="https://github.com/FactionAleph/Random-API">GitHub</a></p>
-</div>
+
+<style>
+        @keyframes spin {from {} to {transform:rotate(360deg);}}
+        .spin:hover {animation-name:spin;animation-duration:3s;position:absolute;}
+    </style>
+    <br><br><span class="spin"><a href="https://github.com/FactionAleph/Random-API">GitHub</a></span><a target="_blank" href="free-web-tools.com/font-sofia-pro/" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute">sofia pro font</a>
