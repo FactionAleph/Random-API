@@ -45,35 +45,53 @@ generator = Random()
 generator.seed()
 visa16 = credit_card_number(generator, visaPrefixList, 16, 10)
 cc = visa16[0].replace('.0','')
-import random
+from random import *
+domains = [ "@hotmail.com", "@gmail.com", "@aol.com", "@mail.com" , "@mail.kz", "@yahoo.com"]
+
 data = {}
 print('[')
-for i in range(99):
+for i in range(499):
+    fn = names.get_first_name()
+    ln = names.get_last_name()
+    em = [fn+'.'+ln+choice(domains), str(randint(100,1000))+ln+choice(domains), fn+str(randint(100,200))+'.'+ln+choice(domains)]
     data['id'] = str(i)
-    data['name'] = names.get_full_name()
-    data['age']  = random.randint(16,78)
+    json_data = json.dumps(data)
+    data['name'] = fn +' '+ ln
+    json_data = json.dumps(data)
+    data['email'] = choice(em)
+    json_data = json.dumps(data)
+    data['age']  = randint(16,78)
+    json_data = json.dumps(data)
     data['cc'] = cc
+    json_data = json.dumps(data)
     data['friends'] = [names.get_full_name(),names.get_full_name(),names.get_full_name()]
     json_data = json.dumps(data)
     print(json_data, ',')
-data['id'] = '100'
-data['name'] = names.get_full_name()
-data['age']  = random.randint(16,78)
+fn = names.get_first_name()
+ln = names.get_last_name()
+em = [fn+'.'+ln+choice(domains), str(randint(100,1000))+ln+choice(domains), fn+str(randint(100,200))+'.'+ln+choice(domains)]
+data['id'] = str(i)
+data['name'] = fn +' '+ ln
+data['email'] = choice(em)
+data['age']  = randint(16,78)
 data['cc'] = cc
 data['friends'] = [names.get_full_name(),names.get_full_name(),names.get_full_name()]
 json_data = json.dumps(data)
 print(json_data)
-print(']')
-#Example output:
-#  {
-#    "name": "William Donaldson",
-#    "cc": "4024007166090100",
-#    "id": "0",
-#    "age": 35,
-#    "friends": [
-#      "Jenna Cooper",
-#      "Stuart Grimm",
-#      "Yvette Scrivens"
-#    ]
-#  }
 
+print(']')
+
+
+#example output: 
+  #{
+  #  "name": "Audrey Drury",
+  #  "friends": [
+  #    "Dorothy Preston",
+  #    "Harvey Johnson",
+  #    "Harold Baker"
+  #  ],
+  #  "id": "1",
+  #  "age": 53,
+  #  "email": "349Drury@gmail.com",
+  #  "cc": "4539618050249500"
+  #}
