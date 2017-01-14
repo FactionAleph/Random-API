@@ -1,0 +1,9 @@
+For the python files (module_attr.py and json_data_generator.py)
+
+json.py
+names.py
+random.py
+Faker.py OR fake-factory.py
+copy.py
+__future__.py
+sys.py
