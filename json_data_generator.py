@@ -2,7 +2,8 @@
 import json, names
 from random import Random
 import copy
-
+from faker import Factory
+fake = Factory.create()
 
 visaPrefixList = [
         ['4', '5', '3', '9'],
@@ -47,51 +48,56 @@ visa16 = credit_card_number(generator, visaPrefixList, 16, 10)
 cc = visa16[0].replace('.0','')
 from random import *
 domains = [ "@hotmail.com", "@gmail.com", "@aol.com", "@mail.com" , "@mail.kz", "@yahoo.com"]
-
+n = '0000000000'
+while '9' in n[3:6] or n[3:6]=='000' or n[6]==n[7]==n[8]==n[9]:
+    n = str(randint(10**9, 10**10-1))
+num=(n[:3] + '-' + n[3:6] + '-' + n[6:])
 data = {}
 print('[')
-for i in range(499):
+for i in range(500):
     fn = names.get_first_name()
     ln = names.get_last_name()
     em = [fn+'.'+ln+choice(domains), str(randint(100,1000))+ln+choice(domains), fn+str(randint(100,200))+'.'+ln+choice(domains)]
-    data['id'] = str(i)
-    json_data = json.dumps(data)
-    data['name'] = fn +' '+ ln
-    json_data = json.dumps(data)
-    data['email'] = choice(em)
-    json_data = json.dumps(data)
-    data['age']  = randint(16,78)
-    json_data = json.dumps(data)
-    data['cc'] = cc
-    json_data = json.dumps(data)
-    data['friends'] = [names.get_full_name(),names.get_full_name(),names.get_full_name()]
-    json_data = json.dumps(data)
+    data['a-id'] = str(i)
+    data['b-name'] = fn +' '+ ln
+    data['d-addr'] = fake.address().replace('\n',' ')
+    data['e-email'] = choice(em)
+    data['c-age']  = str(randint(16,78))
+    data['f-phone'] = num
+    data['g-cc'] = cc
+    data['h-friends'] = [names.get_full_name(),names.get_full_name(),names.get_full_name()]
+    json_data = json.dumps(data, sort_keys=True)
     print(json_data, ',')
 fn = names.get_first_name()
 ln = names.get_last_name()
 em = [fn+'.'+ln+choice(domains), str(randint(100,1000))+ln+choice(domains), fn+str(randint(100,200))+'.'+ln+choice(domains)]
-data['id'] = str(i)
-data['name'] = fn +' '+ ln
-data['email'] = choice(em)
-data['age']  = randint(16,78)
-data['cc'] = cc
-data['friends'] = [names.get_full_name(),names.get_full_name(),names.get_full_name()]
-json_data = json.dumps(data)
+data['a-id'] = '500'
+data['b-name'] = fn +' '+ ln
+data['d-addr'] = fake.address().replace('\n',' ')
+data['e-email'] = choice(em)
+data['c-age']  = str(randint(16,78))
+data['f-phone'] = num
+data['g-cc'] = cc
+data['h-friends'] = [names.get_full_name(),names.get_full_name(),names.get_full_name()]
+json_data = json.dumps(data, sort_keys=True)
 print(json_data)
 
 print(']')
 
-
-#example output: 
-  #{
-  #  "name": "Audrey Drury",
-  #  "friends": [
-  #    "Dorothy Preston",
-  #    "Harvey Johnson",
-  #    "Harold Baker"
-  #  ],
-  #  "id": "1",
-  #  "age": 53,
-  #  "email": "349Drury@gmail.com",
-  #  "cc": "4539618050249500"
-  #}
+'''
+Example response:
+  {
+    "a-id": "0",
+    "b-name": "Aundrea Hassell",
+    "c-age": "23",
+    "d-addr": "26821 Archer Walks Port Maxwellchester, UT 00596-2458",
+    "e-email": "Aundrea.Hassell@mail.kz",
+    "f-phone": "174-746-5352",
+    "g-cc": "4486627783018130",
+    "h-friends": [
+      "Ruth Ramer",
+      "David Bisarra",
+      "Mary Waller"
+    ]
+  }
+'''
