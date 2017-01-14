@@ -4,6 +4,10 @@ from random import Random
 import copy
 from faker import Factory
 fake = Factory.create()
+### OR ###
+from faker import Faker
+fake = Faker()
+
 
 visaPrefixList = [
         ['4', '5', '3', '9'],
