@@ -1,5 +1,5 @@
 #new api (i just wanna make one with a different code lang) under development
-import json, names
+import json, names, ranem
 from random import Random
 import copy
 ##########
@@ -9,7 +9,6 @@ fake = Factory.create()
 from faker import Faker
 fake = Faker()
 ##########
-
 
 visaPrefixList = [
         ['4', '5', '3', '9'],
@@ -53,7 +52,6 @@ generator.seed()
 visa16 = credit_card_number(generator, visaPrefixList, 16, 10)
 cc = visa16[0].replace('.0','')
 from random import *
-domains = [ "@hotmail.com", "@gmail.com", "@aol.com", "@mail.com" , "@mail.kz", "@yahoo.com"]
 n = '0000000000'
 while '9' in n[3:6] or n[3:6]=='000' or n[6]==n[7]==n[8]==n[9]:
     n = str(randint(10**9, 10**10-1))
@@ -63,11 +61,10 @@ print('[')
 for i in range(500):
     fn = names.get_first_name()
     ln = names.get_last_name()
-    em = [fn+'.'+ln+choice(domains), str(randint(100,1000))+ln+choice(domains), fn+str(randint(100,200))+'.'+ln+choice(domains)]
     data['a-id'] = str(i)
     data['b-name'] = fn +' '+ ln
     data['d-addr'] = fake.address().replace('\n',' ')
-    data['e-email'] = choice(em)
+    data['e-email'] = choice(ranem.email())
     data['c-age']  = str(randint(16,78))
     data['f-phone'] = num
     data['g-cc'] = cc
@@ -89,6 +86,9 @@ json_data = json.dumps(data, sort_keys=True)
 print(json_data)
 
 print(']')
+
+
+
 
 '''
 Example response:
