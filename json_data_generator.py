@@ -58,7 +58,7 @@ while '9' in n[3:6] or n[3:6]=='000' or n[6]==n[7]==n[8]==n[9]:
 num=(n[:3] + '-' + n[3:6] + '-' + n[6:])
 data = {}
 print('[')
-for i in range(500):
+for i in range(50000):
     fn = names.get_first_name()
     ln = names.get_last_name()
     data['a-id'] = str(i)
